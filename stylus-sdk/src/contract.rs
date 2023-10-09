@@ -19,6 +19,9 @@ use crate::{
 use alloc::vec::Vec;
 use alloy_primitives::{Address, U256};
 
+// CHRIS: It feels a bit strange that these args, output, read_return_data, return_data_len
+// are on a contract object. I would have expected to see them on a "msg", or "call", object.
+
 /// Reads the invocation's calldata.
 /// The [`entrypoint`](macro@stylus_proc::entrypoint) macro uses this under the hood.
 pub fn args(len: usize) -> Vec<u8> {

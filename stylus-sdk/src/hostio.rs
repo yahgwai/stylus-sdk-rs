@@ -159,6 +159,8 @@ extern "C" {
     ///
     /// [`Deploying Stylus Programs`]: https://developer.arbitrum.io/TODO
     /// [`CREATE2`]: https://www.evm.codes/#f5
+    /// CHRIS: Why call this endowment instead of value?
+    /// CHRIS: Could maybe also document that 'contract' will contain the address of the newly deployed contract
     pub fn create2(
         code: *const u8,
         code_len: usize,
@@ -224,6 +226,7 @@ extern "C" {
     pub fn memory_grow(pages: u16);
 
     /// Whether the current call is reentrant.
+    /// CHRIS: Again, could be is_reentrant
     pub fn msg_reentrant() -> bool;
 
     /// Gets the address of the account that called the program. For normal L2-to-L2 transactions
@@ -249,6 +252,7 @@ extern "C" {
     ///
     /// [`keccak256`]: https://en.wikipedia.org/wiki/SHA-3
     /// [`SHA3`]: https://www.evm.codes/#20
+    /// CHRIS: Maybe some docs about when to use this keccak vs the other keccak, on both this and the other keccak
     #[allow(unused)]
     pub fn native_keccak256(bytes: *const u8, len: usize, output: *mut u8);
 

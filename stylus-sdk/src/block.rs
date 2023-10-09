@@ -53,3 +53,5 @@ wrap_hostio!(
     /// [`Block Numbers and Time`]: https://developer.arbitrum.io/time
     timestamp TIMESTAMP block_timestamp u64
 );
+
+// CHRIS: Missing blockhash property?

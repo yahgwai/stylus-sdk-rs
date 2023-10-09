@@ -17,6 +17,9 @@ use alloy_primitives::{Address, B256, U256};
 
 wrap_hostio!(
     /// Whether the current call is reentrant.
+    /// CHRIS: Could perhaps be named is_reentrant, is also fine as is. Only confusion could be thinking that
+    /// reentrant refers to the party that is re-entering, or the function that is being reentered from?
+    /// But I think those are unlikely/not sensible confusions.
     reentrant REENTRANT msg_reentrant bool
 );
 
@@ -38,3 +41,5 @@ wrap_hostio!(
     /// Get the ETH value in wei sent to the program.
     value VALUE msg_value U256
 );
+
+// CHRIS: is there a missing data() func for accessing all the call data? This is quite commonly used

@@ -23,7 +23,7 @@ fn emit_log(bytes: &[u8], topics: usize) {
 }
 
 /// Emits an EVM log from its raw topics and data.
-/// Most users should prefer the alloy-typed [`raw_log`].
+/// Most users should prefer the alloy-typed [`raw_log`]. // CHRIS: typo? should be just ['log']?
 pub fn raw_log(topics: &[B256], data: &[u8]) -> Result<(), &'static str> {
     if topics.len() > 4 {
         return Err("too many topics");
@@ -36,6 +36,7 @@ pub fn raw_log(topics: &[B256], data: &[u8]) -> Result<(), &'static str> {
 }
 
 /// Emits a typed alloy log.
+// CHRIS: Similar keyword in Solidity would be "emit" instead of log. But I think log is also obvious.
 pub fn log<T: SolEvent>(event: T) {
     // According to the alloy docs, encode_topics_raw fails only if the array is too small
 

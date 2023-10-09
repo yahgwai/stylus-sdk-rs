@@ -22,7 +22,7 @@ pub trait AddressVM {
     fn balance(&self) -> U256;
 
     /// The codehash of the contract or [`EOA`] at the given address.
-    ///
+    /// CHRIS: What does it mean to return the codehash of an EOA. What value is returned for that? 
     /// [`EOA`]: https://ethereum.org/en/developers/docs/accounts/#types-of-account
     fn codehash(&self) -> B256;
 

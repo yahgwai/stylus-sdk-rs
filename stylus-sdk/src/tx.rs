@@ -36,6 +36,7 @@ pub fn gas_to_ink(gas: u64) -> u64 {
 ///
 /// [`Ink and Gas`]: https://developer.arbitrum.io/TODO
 pub fn ink_to_gas(ink: u64) -> u64 {
+    // CHRIS: Might it be better to round up here? Should probably at documentat behaviour at least.
     ink / ink_price() as u64
 }
 
